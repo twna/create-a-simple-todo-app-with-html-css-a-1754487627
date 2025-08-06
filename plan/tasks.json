@@ -1,0 +1,44 @@
+[
+  {
+    "id": "task-001",
+    "agent": "frontend-developer",
+    "description": "Create the HTML structure for the todo app",
+    "file_path": "public/index.html"
+  },
+  {
+    "id": "task-002",
+    "agent": "frontend-developer",
+    "description": "Design the CSS for the todo app's layout",
+    "file_path": "styles/main.css"
+  },
+  {
+    "id": "task-003",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle todo item creation",
+    "file_path": "scripts/todoCreate.js"
+  },
+  {
+    "id": "task-004",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle todo item deletion",
+    "file_path": "scripts/todoDelete.js"
+  },
+  {
+    "id": "task-005",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to handle todo item completion toggle",
+    "file_path": "scripts/todoToggleComplete.js"
+  },
+  {
+    "id": "task-006",
+    "agent": "frontend-developer",
+    "description": "Write the JavaScript to filter the todo items",
+    "file_path": "scripts/todoFilter.js"
+  },
+  {
+    "id": "task-007",
+    "agent": "frontend-developer",
+    "description": "Integrate the CSS and JavaScript with the HTML file",
+    "file_path": "public/index.html"
+  }
+]
