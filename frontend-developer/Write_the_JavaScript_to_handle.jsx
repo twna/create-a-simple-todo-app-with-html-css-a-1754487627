@@ -1,9 +1,9 @@
 {
-    "code": "document.addEventListener('DOMContentLoaded', function () {\n    var addButton = document.getElementById('addTodo');\n    var todoList = document.getElementById('todoList');\n    var inputField = document.getElementById('todoInput');\n\n    addButton.addEventListener('click', function () {\n        var todoText = inputField.value.trim();\n        if (todoText === '') {\n            alert('Please enter a todo item.');\n            return;\n        }\n\n        var listItem = document.createElement('li');\n        listItem.textContent = todoText;\n        listItem.className = 'todo-item';\n\n        var deleteButton = document.createElement('button');\n        deleteButton.textContent = 'Delete';\n        deleteButton.className = 'delete-button';\n        deleteButton.onclick = function () {\n            listItem.remove();\n        };\n\n        listItem.appendChild(deleteButton);\n        todoList.appendChild(listItem);\n\n        inputField.value = '';\n    });\n});",
-    "summary": "Implemented the JavaScript to handle the creation of todo items. When the 'Add' button is clicked, a new list item is created with the text from the input field. If the input is empty, an alert is shown. Each todo item has a 'Delete' button that, when clicked, will remove the item from the list.",
+    "code": "document.addEventListener('DOMContentLoaded', function () {\n    const todoList = document.getElementById('todo-list');\n\n    todoList.addEventListener('click', function (event) {\n        if (event.target.tagName === 'LI') {\n            event.target.classList.toggle('completed');\n            updateLocalStorage();\n        }\n    });\n\n    function updateLocalStorage() {\n        const todos = [];\n        document.querySelectorAll('#todo-list li').forEach(function (todoItem) {\n            todos.push({\n                text: todoItem.textContent,\n                completed: todoItem.classList.contains('completed')\n            });\n        });\n        localStorage.setItem('todos', JSON.stringify(todos));\n    }\n});",
+    "summary": "Implemented JavaScript code to handle the toggling of todo item completion. When a list item (LI) within the todo list is clicked, it toggles the 'completed' class, visually indicating completion. It also updates the local storage to persist the completion state of the todo items.",
     "checklist": [
-        "Add event listener for DOMContentLoaded",
-        "Handle click event on the 'Add' button",
-        "Create new todo list item with delete functionality"
+        "Add event listener to the todo list for click events",
+        "Toggle 'completed' class on todo items when clicked",
+        "Update local storage to save the completion state of todo items"
     ]
 }
